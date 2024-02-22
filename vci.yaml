@@ -1,0 +1,34 @@
+kind: VirtualClusterInstance
+apiVersion: management.loft.sh/v1
+metadata:
+  name: vcluster2
+  namespace: loft-p-default
+  labels:
+    loft.sh/import-argocd: 'true'
+spec:
+  displayName: vcluster2
+  owner:
+    user: admin
+  template:
+    metadata: {}
+    instanceTemplate:
+      metadata: {}
+    pro:
+      enabled: true
+    helmRelease:
+      chart: {}
+      values: |-
+        sync:
+          ingresses:
+            enabled: true
+
+        coredns:
+          integrated: true
+    accessPoint:
+      ingress: {}
+    spaceTemplate:
+      metadata: {}
+  clusterRef:
+    cluster: loft-cluster
+    namespace: loft-default-v-vcluster2
+    virtualCluster: vcluster2
