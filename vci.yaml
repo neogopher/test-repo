@@ -1,35 +1,18 @@
 kind: VirtualClusterInstance
 apiVersion: management.loft.sh/v1
 metadata:
-  name: vcluster4
+  name: vcluster5
   namespace: loft-p-default
 labels:
   pipekit/appset-vcluster: "true"
   vc-identifier: vc-timtest-1
 spec:
-  displayName: vcluster4
+  displayName: vcluster5
   owner:
     user: admin
-  template:
-    metadata: {}
-    instanceTemplate:
-      metadata: {}
-    pro:
-      enabled: true
-    helmRelease:
-      chart: {}
-      values: |-
-        sync:
-          ingresses:
-            enabled: true
-
-        coredns:
-          integrated: true
-    accessPoint:
-      ingress: {}
-    spaceTemplate:
-      metadata: {}
+  templateRef:
+    name: my-template
   clusterRef:
     cluster: loft-cluster
-    namespace: loft-default-v-vcluster4
-    virtualCluster: vcluster4
+    namespace: loft-default-v-vcluster5
+    virtualCluster: vcluster5
