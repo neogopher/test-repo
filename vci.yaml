@@ -1,12 +1,10 @@
 kind: VirtualClusterInstance
 apiVersion: management.loft.sh/v1
 metadata:
-  name: vcluster2
+  name: vcluster3
   namespace: loft-p-default
-  labels:
-    loft.sh/import-argocd: 'true'
 spec:
-  displayName: vcluster2
+  displayName: vcluster3
   owner:
     user: admin
   template:
@@ -30,5 +28,5 @@ spec:
       metadata: {}
   clusterRef:
     cluster: loft-cluster
-    namespace: loft-default-v-vcluster2
-    virtualCluster: vcluster2
+    namespace: loft-default-v-vcluster3
+    virtualCluster: vcluster3
